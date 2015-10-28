@@ -4,6 +4,7 @@ logs
 
 # Build Directory
 dist/
+build/
 
 # Dependency directories
 node_modules/
