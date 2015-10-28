@@ -1,21 +1,8 @@
-/**
- * @ngdoc overview
- * @name app.core
- * @description Configuration block for restangular
- */
+'use strict';
 
-(function(){
+module.exports = configuration;
 
-  'use strict';
-
-  angular.module('app.core')
-    .config(configuration);
-
-  /* @ngInject */
-  function configuration(RestangularProvider){
-
-    RestangularProvider.setBaseUrl('/api');
-
-  }
-
-}());
+/* @ngInject */
+function configuration(RestangularProvider){
+  RestangularProvider.setBaseUrl('/api');
+}

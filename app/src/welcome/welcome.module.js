@@ -1,20 +1,20 @@
 'use strict';
 
-var angular = require('angular');
+var name = module.exports = 'app.welcome';
 
-var module = angular.module('app.welcome', []);
+angular
+  .module(name, [])
+  .config(configuration)
+  .controller('Welcome', require('./welcome.controller'))
+;
 
-module.exports = module.name;
-
-module.configuration(configuration);
-
-/* @ngInject */
 function configuration($stateProvider) {
   $stateProvider
     .state('Welcome', {
       url: '/welcome',
-      templateUrl: 'src/welcome/welcome.html',
+      template: require('./welcome.html'),
       controller: 'Welcome as vm',
       title: 'ng-Super Welcome'
     });
+
 }

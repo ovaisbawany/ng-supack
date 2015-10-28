@@ -1,10 +1,16 @@
 'use strict';
 
-var angular = require('angular');
+var name = module.exports = 'app.core';
 
-var module = angular.module('app.core', [
-  require('angular-ui-router'),
-  require('restangular')
-]);
+// Fix to make restangular work with webpack since it doesn't support common js.
+// For more info: https://github.com/mgonto/restangular/issues/749
+require('restangular');
 
-module.exports = module.name;
+angular
+  .module(name, [
+    require('angular-ui-router'),
+    'restangular'
+  ])
+  .config(require('./restangular.config'))
+  .config(require('./router.config'))
+;

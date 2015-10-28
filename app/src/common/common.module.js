@@ -1,8 +1,5 @@
 'use strict';
 
-var angular = require('angular');
+var name = module.exports = 'app.common';
 
-var module = angular.module('app.common', [
-]);
-
-module.exports = module.name;
+angular.module(name, []);
