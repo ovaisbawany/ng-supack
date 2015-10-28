@@ -2,16 +2,16 @@
 logs
 *.log
 
-# dist directory
+# Build Directory
 dist/
 
-# Dependency directory
+# Dependency directories
 node_modules/
 app/bower_components/
 
-#SASS
+# Temporary Directories
 .sass-cache
-
-#tmp
 .tmp
 
+# IDE directory
+.idea/
