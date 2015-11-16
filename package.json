@@ -17,7 +17,10 @@
   "dependencies": {
     "angular": "^1.4.2",
     "angular-ui-router": "^0.2.15",
+    "bootstrap-sass": "^3.3.5",
+    "file-loader": "^0.8.4",
     "lodash": "^3.10.1",
-    "restangular": "^1.5.1"
+    "restangular": "^1.5.1",
+    "url-loader": "^0.5.6"
   }
 }
