@@ -16,6 +16,6 @@ function routingEvents($rootScope, $log) {
     $rootScope.pageTitle = toState.title || 'Angular + Webpack = NgPack';
   });
 
-  $rootScope.on('$destroy', notFoundDeregistration);
-  $rootScope.on('$destroy', changeSuccessDeregistration);
+  $rootScope.$on('$destroy', notFoundDeregistration);
+  $rootScope.$on('$destroy', changeSuccessDeregistration);
 }
