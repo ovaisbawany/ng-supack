@@ -6,5 +6,3 @@ module.exports = configuration;
 function configuration($urlRouterProvider) {
   $urlRouterProvider.otherwise('/welcome');
 }
-
-

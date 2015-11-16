@@ -3,6 +3,6 @@
 module.exports = configuration;
 
 /* @ngInject */
-function configuration(RestangularProvider){
+function configuration(RestangularProvider) {
   RestangularProvider.setBaseUrl('/api');
 }
