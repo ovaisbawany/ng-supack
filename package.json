@@ -5,7 +5,8 @@
   "license": "MIT",
   "scripts": {
     "start": "./node_modules/.bin/webpack-dev-server --content-base app --hot",
-    "lint": "./node_modules/.bin/eslint --config ./.eslintrc ./app || true"
+    "lint": "./node_modules/.bin/eslint --config ./.eslintrc ./app || true",
+    "build": "./node_modules/.bin/webpack --optimize-minimize --optimize-occurence-order --progress"
   },
   "devDependencies": {
     "css-loader": "0.15.3",
