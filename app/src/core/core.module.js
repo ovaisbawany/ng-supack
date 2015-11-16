@@ -1,5 +1,7 @@
 'use strict';
 
+require('./core.scss');
+
 var name = module.exports = 'app.core';
 
 // Fix to make restangular work with webpack since it doesn't support common js.
@@ -13,4 +15,5 @@ angular
   ])
   .config(require('./restangular.config'))
   .config(require('./router.config'))
+  .run(require('./router.run'))
 ;
