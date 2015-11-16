@@ -7,6 +7,8 @@
 var webpack = require('webpack');
 var path = require('path');
 
+var HtmlWebpackPlugin = require('html-webpack-plugin');
+
 module.exports = {
   context: __dirname + '/app',
   entry: {
@@ -69,6 +71,9 @@ module.exports = {
     // definePlugin takes raw strings and inserts them, so you can put strings of JS if you want.
     new webpack.DefinePlugin({
       __DEV__: JSON.stringify(JSON.parse(process.env.BUILD_DEV || 'true'))
+    }),
+    new HtmlWebpackPlugin({
+      template: './app/index.html'
     })
   ]
 };
