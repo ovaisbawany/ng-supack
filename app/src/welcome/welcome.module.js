@@ -1,5 +1,7 @@
 'use strict';
 
+require('./welcome.scss');
+
 var name = module.exports = 'app.welcome';
 
 angular
