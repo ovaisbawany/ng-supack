@@ -4,7 +4,7 @@
   "repository": "https://github.com/umayr/ng-supack.git",
   "license": "MIT",
   "scripts": {
-    "start": "./node_modules/.bin/webpack-dev-server --content-base app --hot",
+    "start": "./node_modules/.bin/webpack-dev-server --inline --debug --devtool eval --hot --content-base app",
     "lint": "./node_modules/.bin/eslint --config ./.eslintrc ./app || true",
     "build": "./node_modules/.bin/webpack --optimize-minimize --optimize-occurence-order --progress"
   },
