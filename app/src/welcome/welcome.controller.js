@@ -3,12 +3,15 @@
 module.exports = controller;
 
 /* @ngInject */
-function controller() {
+function controller($log) {
   var vm = this;
 
-  vm.welcomeMessage = 'ZE GENGO !';
+  vm.welcomeMessage = 'Yet another generator for angular powered by webpack.';
   vm.testFunction = testFunction;
 
+  if (__DEV__) {
+    $log.info('Initializing controller');
+  }
   function testFunction(num) {
     console.info('This is a test function number ' + num);
   }
