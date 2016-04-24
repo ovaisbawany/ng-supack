@@ -28,6 +28,8 @@
     "bootstrap-sass": "^3.3.5",
     "file-loader": "^0.8.4",
     "lodash": "^3.10.1",
+    "node-sass": "^3.3.3",
+    "oclazyload": "^1.0.9",
     "restangular": "^1.5.1",
     "url-loader": "^0.5.6"
   }
