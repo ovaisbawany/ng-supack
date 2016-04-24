@@ -2,7 +2,7 @@
 
 var name = module.exports = 'app.dashboard';
 
- var mod = angular
+var mod = angular
   .module(name, [])
   .controller('Dashboard', require('./dashboard.controller'));
 

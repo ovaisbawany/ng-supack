@@ -9,7 +9,7 @@ function controller($log) {
   vm.welcomeMessage = 'Dashboard is HERE';
   vm.testFunction = testFunction;
 
-    $log.info('Initializing  Dashboard controller');
+  $log.info('Initializing  Dashboard controller');
 
   function testFunction(num) {
     $log.info('This is a test function number ' + num);

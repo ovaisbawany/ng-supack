@@ -2,7 +2,8 @@
 
 require('angular');
 
-angular.module('app', [
+angular.module('app',
+  [
     require('./core/core.module'),
     require('oclazyload'),
     require('./common/common.module')
@@ -17,15 +18,15 @@ function configurationDashboard($stateProvider) {
       template: require('./dashboard/dashboard.html'),
       controller: 'Dashboard as vm',
       title: 'ng-Super Dashboard',
-      resolve: ['$q', '$ocLazyLoad', function ($q, $ocLazyLoad) {
+      resolve: ['$q', '$ocLazyLoad', '$log', function ($q, $ocLazyLoad, $log) {
+        showLoadingState($log);
         var deferred = $q.defer();
-
         require.ensure([], function() {
           var mod = require('./dashboard/dashboard.module');
           $ocLazyLoad.load({
             name: mod.name
           });
-
+          hideLoadingState($log);
           deferred.resolve(mod.controller);
         });
 
@@ -42,25 +43,28 @@ function configurationWelcome($stateProvider) {
       template: require('./welcome/welcome.html'),
       controller: 'Welcome as vm',
       title: 'ng-Super Welcome',
-      resolve: {
-        loadController: function($q, $ocLazyLoad) {
-          return $q(function(resolve)  {
-            require.ensure([], function() {
-              // load only controller module
-              var module = require('./welcome/welcome.module');
-              $ocLazyLoad.load({name: module.name});
-              resolve(module.controller);
-            });
+      resolve: ['$q', '$ocLazyLoad', '$log', function ($q, $ocLazyLoad, $log) {
+        showLoadingState($log);
+        var deferred = $q.defer();
+        require.ensure([], function() {
+          var mod = require('./welcome/welcome.module');
+          $ocLazyLoad.load({
+            name: mod.name
           });
-        }
-      }
+          hideLoadingState($log);
+          deferred.resolve(mod.controller);
+        });
+
+        return deferred.promise;
+      }]
     });
 
 }
-  function showLoadingState() {
-    console.log('SHOW Loading');
-  }
 
-  function hideLoadingState() {
-    console.log('HIDING Loading');
-  }
+function showLoadingState($log) {
+  $log.info('SHOW Loading');
+}
+
+function hideLoadingState($log) {
+  $log.info('HIDING Loading');
+}
