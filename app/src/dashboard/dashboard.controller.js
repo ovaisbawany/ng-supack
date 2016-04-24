@@ -6,12 +6,10 @@ module.exports = controller;
 function controller($log) {
   var vm = this;
 
-  vm.welcomeMessage = 'Yet another generator for angular powered by webpack.';
+  vm.welcomeMessage = 'Dashboard is HERE';
   vm.testFunction = testFunction;
 
-  if (__DEV__) { // eslint-disable-line no-undef
-    $log.info('Initializing WelCome controller');
-  }
+  $log.info('Initializing  Dashboard controller');
 
   function testFunction(num) {
     $log.info('This is a test function number ' + num);

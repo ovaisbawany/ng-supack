@@ -39,11 +39,15 @@ with a minor addition of stylesheets being included in the module directory.
 │       │   ├── restangular.config.js
 │       │   ├── router.config.js
 │       │   └── router.run.js
-│       └── welcome
-│           ├── welcome.controller.js
-│           ├── welcome.html
-│           ├── welcome.module.js
-│           └── welcome.scss
+│       ├── welcome
+│       │   ├── welcome.controller.js
+│       │   ├── welcome.html
+│       │   ├── welcome.module.js
+│       │   └── welcome.scss
+│       └── dashboard
+│           ├── dashboard.controller.js
+│           ├── dashboard.html
+│           └── dashboard.module.js
 ├── LICENSE
 ├── package.json
 └── webpack.config.js
